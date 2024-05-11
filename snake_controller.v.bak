@@ -1,0 +1,16 @@
+module snake_controller
+(
+	//-------------CLOCK----------------
+	input refresh,
+	input clk_vga,
+	
+	//-------------VGA signals----------
+	input [9:0] Xpos,
+	input [9:0] Ypos,
+	output [9:0] R,
+	output [9:0] G,
+	output [9:0] B,
+	
+	//------------SNES signals----------
+	
+)

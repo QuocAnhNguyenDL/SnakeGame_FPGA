@@ -1,0 +1,7 @@
+
+State Machine - |snake_controller|direction
+Name direction.UP direction.LEFT direction.DOWN direction.RIGHT 
+direction.RIGHT 0 0 0 0 
+direction.DOWN 0 0 1 1 
+direction.LEFT 0 1 0 1 
+direction.UP 1 0 0 1 
