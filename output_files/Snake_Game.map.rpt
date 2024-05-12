@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Snake_Game
-Sat May 11 23:44:02 2024
+Sun May 12 11:53:53 2024
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -18,9 +18,10 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
  10. Removed Registers Triggering Further Register Optimizations
  11. General Register Statistics
  12. Multiplexer Restructuring Statistics (Restructuring Performed)
- 13. Elapsed Time Per Partition
- 14. Analysis & Synthesis Messages
- 15. Analysis & Synthesis Suppressed Messages
+ 13. Parameter Settings for User Entity Instance: Top-level Entity: |snake_controller
+ 14. Elapsed Time Per Partition
+ 15. Analysis & Synthesis Messages
+ 16. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -46,7 +47,7 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat May 11 23:44:02 2024           ;
+; Analysis & Synthesis Status        ; Successful - Sun May 12 11:53:53 2024           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; Snake_Game                                      ;
 ; Top-level Entity Name              ; snake_controller                                ;
@@ -55,7 +56,7 @@ applicable agreement for further details.
 ;     Total combinational functions  ; 0                                               ;
 ;     Dedicated logic registers      ; 0                                               ;
 ; Total registers                    ; 0                                               ;
-; Total pins                         ; 57                                              ;
+; Total pins                         ; 30                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
 ; Embedded Multiplier 9-bit elements ; 0                                               ;
@@ -165,13 +166,14 @@ applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                      ;
-+----------------------------------+-----------------+------------------------+-------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path        ; Library ;
-+----------------------------------+-----------------+------------------------+-------------------------------------+---------+
-; snake_controller.v               ; yes             ; User Verilog HDL File  ; D:/Snake/Quartus/snake_controller.v ;         ;
-+----------------------------------+-----------------+------------------------+-------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                            ;
++----------------------------------+-----------------+------------------------------+-------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path        ; Library ;
++----------------------------------+-----------------+------------------------------+-------------------------------------+---------+
+; game_para.txt                    ; yes             ; User File                    ; D:/Snake/Quartus/game_para.txt      ;         ;
+; snake_controller.v               ; yes             ; Auto-Found Verilog HDL File  ; D:/Snake/Quartus/snake_controller.v ;         ;
++----------------------------------+-----------------+------------------------------+-------------------------------------+---------+
 
 
 +-----------------------------------------------------+
@@ -194,7 +196,7 @@ applicable agreement for further details.
 ;     -- Dedicated logic registers            ; 0     ;
 ;     -- I/O registers                        ; 0     ;
 ;                                             ;       ;
-; I/O pins                                    ; 57    ;
+; I/O pins                                    ; 30    ;
 ; Embedded Multiplier 9-bit elements          ; 0     ;
 +---------------------------------------------+-------+
 
@@ -204,7 +206,7 @@ applicable agreement for further details.
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 ; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; |snake_controller          ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 57   ; 0            ; |snake_controller   ; work         ;
+; |snake_controller          ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 30   ; 0            ; |snake_controller   ; work         ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -271,6 +273,24 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
 
 
++----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |snake_controller ;
++----------------+-------+---------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                    ;
++----------------+-------+---------------------------------------------------------+
+; UP             ; 00    ; Unsigned Binary                                         ;
+; DOWN           ; 01    ; Unsigned Binary                                         ;
+; LEFT           ; 10    ; Unsigned Binary                                         ;
+; RIGHT          ; 11    ; Unsigned Binary                                         ;
+; width          ; 30    ; Signed Integer                                          ;
+; height         ; 22    ; Signed Integer                                          ;
+; snake_color    ; 100   ; Unsigned Binary                                         ;
+; food_codor     ; 010   ; Unsigned Binary                                         ;
+; blank_color    ; 000   ; Unsigned Binary                                         ;
++----------------+-------+---------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +-------------------------------+
 ; Elapsed Time Per Partition    ;
 +----------------+--------------+
@@ -286,66 +306,39 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Sat May 11 23:44:00 2024
+    Info: Processing started: Sun May 12 11:53:52 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Snake_Game -c Snake_Game
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
-Info (12021): Found 1 design units, including 1 entities, in source file snake_controller.v
+Warning (12019): Can't analyze file -- file game_para.v is missing
+Warning (12125): Using design file snake_controller.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: snake_controller
 Info (12127): Elaborating entity "snake_controller" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at snake_controller.v(35): truncated value with size 10 to match size of target (5)
-Warning (10230): Verilog HDL assignment warning at snake_controller.v(36): truncated value with size 10 to match size of target (5)
-Warning (10230): Verilog HDL assignment warning at snake_controller.v(59): truncated value with size 10 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at snake_controller.v(59): truncated value with size 32 to match size of target (5)
-Warning (10230): Verilog HDL assignment warning at snake_controller.v(60): truncated value with size 10 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at snake_controller.v(60): truncated value with size 32 to match size of target (5)
-Warning (10230): Verilog HDL assignment warning at snake_controller.v(61): truncated value with size 10 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at snake_controller.v(61): truncated value with size 32 to match size of target (5)
-Warning (10230): Verilog HDL assignment warning at snake_controller.v(62): truncated value with size 10 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at snake_controller.v(62): truncated value with size 32 to match size of target (5)
-Warning (10230): Verilog HDL assignment warning at snake_controller.v(70): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at snake_controller.v(68): truncated value with size 32 to match size of target (5)
-Warning (10230): Verilog HDL assignment warning at snake_controller.v(66): truncated value with size 32 to match size of target (5)
-Warning (10034): Output port "R" at snake_controller.v(11) has no driver
-Warning (10034): Output port "G" at snake_controller.v(12) has no driver
-Warning (10034): Output port "B" at snake_controller.v(13) has no driver
+Warning (10858): Verilog HDL warning at snake_controller.v(38): object pixel used but never assigned
+Warning (10230): Verilog HDL assignment warning at snake_controller.v(43): truncated value with size 10 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at snake_controller.v(44): truncated value with size 10 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at snake_controller.v(72): truncated value with size 10 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at snake_controller.v(72): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at snake_controller.v(73): truncated value with size 10 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at snake_controller.v(73): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at snake_controller.v(74): truncated value with size 10 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at snake_controller.v(74): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at snake_controller.v(75): truncated value with size 10 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at snake_controller.v(75): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at snake_controller.v(83): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at snake_controller.v(81): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at snake_controller.v(79): truncated value with size 32 to match size of target (5)
+Warning (10030): Net "pixel[2..0]" at snake_controller.v(38) has no driver or initial value, using a default initial value '0'
 Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "snake" into its bus
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "R[0]" is stuck at GND
-    Warning (13410): Pin "R[1]" is stuck at GND
-    Warning (13410): Pin "R[2]" is stuck at GND
-    Warning (13410): Pin "R[3]" is stuck at GND
-    Warning (13410): Pin "R[4]" is stuck at GND
-    Warning (13410): Pin "R[5]" is stuck at GND
-    Warning (13410): Pin "R[6]" is stuck at GND
-    Warning (13410): Pin "R[7]" is stuck at GND
-    Warning (13410): Pin "R[8]" is stuck at GND
-    Warning (13410): Pin "R[9]" is stuck at GND
-    Warning (13410): Pin "G[0]" is stuck at GND
-    Warning (13410): Pin "G[1]" is stuck at GND
-    Warning (13410): Pin "G[2]" is stuck at GND
-    Warning (13410): Pin "G[3]" is stuck at GND
-    Warning (13410): Pin "G[4]" is stuck at GND
-    Warning (13410): Pin "G[5]" is stuck at GND
-    Warning (13410): Pin "G[6]" is stuck at GND
-    Warning (13410): Pin "G[7]" is stuck at GND
-    Warning (13410): Pin "G[8]" is stuck at GND
-    Warning (13410): Pin "G[9]" is stuck at GND
-    Warning (13410): Pin "B[0]" is stuck at GND
-    Warning (13410): Pin "B[1]" is stuck at GND
-    Warning (13410): Pin "B[2]" is stuck at GND
-    Warning (13410): Pin "B[3]" is stuck at GND
-    Warning (13410): Pin "B[4]" is stuck at GND
-    Warning (13410): Pin "B[5]" is stuck at GND
-    Warning (13410): Pin "B[6]" is stuck at GND
-    Warning (13410): Pin "B[7]" is stuck at GND
-    Warning (13410): Pin "B[8]" is stuck at GND
-    Warning (13410): Pin "B[9]" is stuck at GND
+    Warning (13410): Pin "R" is stuck at GND
+    Warning (13410): Pin "G" is stuck at GND
+    Warning (13410): Pin "B" is stuck at GND
 Info (17049): 6 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file D:/Snake/Quartus/output_files/Snake_Game.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 27 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "clk_vga"
+    Warning (15610): No output dependent on input pin "vga_clk"
     Warning (15610): No output dependent on input pin "Xpos[0]"
     Warning (15610): No output dependent on input pin "Xpos[1]"
     Warning (15610): No output dependent on input pin "Xpos[2]"
@@ -372,13 +365,13 @@ Warning (21074): Design contains 27 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "down_in"
     Warning (15610): No output dependent on input pin "right_in"
     Warning (15610): No output dependent on input pin "refresh"
-Info (21057): Implemented 57 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 30 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 27 input pins
-    Info (21059): Implemented 30 output pins
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 75 warnings
-    Info: Peak virtual memory: 4629 megabytes
-    Info: Processing ended: Sat May 11 23:44:02 2024
-    Info: Elapsed time: 00:00:02
+    Info (21059): Implemented 3 output pins
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 49 warnings
+    Info: Peak virtual memory: 4628 megabytes
+    Info: Processing ended: Sun May 12 11:53:53 2024
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
 

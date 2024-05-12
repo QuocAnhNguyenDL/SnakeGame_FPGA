@@ -2,15 +2,15 @@ module snake_controller
 (
 	//-------------CLOCK----------------
 	input	 				refresh,
-	input 				clk_vga,
+	input 				vga_clk,
 	input 				reset,
 	
 	//-------------VGA signals----------
 	input 	[9:0] 	Xpos,
 	input 	[9:0] 	Ypos,
-	output 	[9:0] 	R,
-	output 	[9:0] 	G,
-	output 	[9:0] 	B,
+	output 			 	R,
+	output 			 	G,
+	output 				B,
 	
 	//------------SNES signals----------
 	input 				up_in,
@@ -19,15 +19,10 @@ module snake_controller
 	input 				right_in
 );
 
-localparam UP = 2'b00;
-localparam DOWN = 2'b01;
-localparam LEFT = 2'b10;
-localparam RIGHT = 2'b11;
-
-localparam width = 30;
-localparam height = 22;
+`include "game_para.txt"
 
 reg[5:0] snake[0 : width - 1][0 : height - 1];
+reg[3:0] pixel;
 
 reg [1:0] direction = RIGHT;
 reg [9:0] length = 10'b1;
@@ -36,6 +31,11 @@ reg[4:0] headX = 10'b10;
 reg[4:0] headY = 10'b10; 
 
 reg [4:0] i,j;
+
+
+assign R = pixel[2];
+assign G = pixel[1];
+assign B = pixel[0];
 
 //------Update direction-------//
 always @(posedge refresh)
@@ -72,6 +72,16 @@ begin
 	end
 	
 end
+
+//----------Draw Snake-----------//
+/*always @(posedge vga_clk)
+begin
+	if(Xpos > 20 && Xpos < 619 && Ypos > 20 && Ypos < 459)
+	begin
+		if(snake[(Xpos - 20)/20][(Ypos-20)/20] > 0) pixel =  snake_color;
+		else pixel = blank_color;
+	end
+end*/
 
 endmodule
 

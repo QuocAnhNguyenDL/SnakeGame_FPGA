@@ -1,4 +1,4 @@
-Fitter Status : Successful - Sat May 11 23:44:06 2024
+Fitter Status : Successful - Sun May 12 11:53:57 2024
 Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
 Revision Name : Snake_Game
 Top-level Entity Name : snake_controller
@@ -9,7 +9,7 @@ Total logic elements : 0 / 33,216 ( 0 % )
     Total combinational functions : 0 / 33,216 ( 0 % )
     Dedicated logic registers : 0 / 33,216 ( 0 % )
 Total registers : 0
-Total pins : 57 / 475 ( 12 % )
+Total pins : 30 / 475 ( 6 % )
 Total virtual pins : 0
 Total memory bits : 0 / 483,840 ( 0 % )
 Embedded Multiplier 9-bit elements : 0 / 70 ( 0 % )

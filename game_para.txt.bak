@@ -1,0 +1,11 @@
+paramater UP = 2'b00;
+paramater DOWN = 2'b01;
+paramater LEFT = 2'b10;
+paramater RIGHT = 2'b11;
+
+paramater width = 30;
+paramater height = 22;
+
+paramater snake_color = 3'b100;
+paramater food_codor  = 3'b010;
+paramater blank_color = 3'b000;
