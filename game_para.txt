@@ -7,5 +7,5 @@ parameter width = 30;
 parameter height = 22;
 
 parameter snake_color = 3'b100;
-parameter food_codor  = 3'b010;
+parameter food_color  = 3'b010;
 parameter blank_color = 3'b000;

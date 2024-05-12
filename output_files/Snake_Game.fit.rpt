@@ -1,5 +1,5 @@
 Fitter report for Snake_Game
-Sun May 12 11:53:57 2024
+Sun May 12 14:58:42 2024
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -20,15 +20,19 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
  12. Output Pins
  13. I/O Bank Usage
  14. All Package Pins
- 15. Output Pin Default Load For Reported TCO
- 16. Fitter Resource Utilization by Entity
- 17. Delay Chain Summary
- 18. Pad To Core Delay Chain Fanout
- 19. Other Routing Usage Summary
- 20. Fitter Device Options
- 21. Operating Settings and Conditions
- 22. Fitter Messages
- 23. Fitter Suppressed Messages
+ 15. PLL Summary
+ 16. PLL Usage
+ 17. Output Pin Default Load For Reported TCO
+ 18. Fitter Resource Utilization by Entity
+ 19. Delay Chain Summary
+ 20. Pad To Core Delay Chain Fanout
+ 21. Control Signals
+ 22. Non-Global High Fan-Out Signals
+ 23. Other Routing Usage Summary
+ 24. Fitter Device Options
+ 25. Operating Settings and Conditions
+ 26. Fitter Messages
+ 27. Fitter Suppressed Messages
 
 
 
@@ -54,10 +58,10 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                       ;
 +------------------------------------+-------------------------------------------------+
-; Fitter Status                      ; Successful - Sun May 12 11:53:57 2024           ;
+; Fitter Status                      ; Successful - Sun May 12 14:58:42 2024           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; Snake_Game                                      ;
-; Top-level Entity Name              ; snake_controller                                ;
+; Top-level Entity Name              ; game                                            ;
 ; Family                             ; Cyclone II                                      ;
 ; Device                             ; EP2C35F672C6                                    ;
 ; Timing Models                      ; Final                                           ;
@@ -65,11 +69,11 @@ applicable agreement for further details.
 ;     Total combinational functions  ; 0 / 33,216 ( 0 % )                              ;
 ;     Dedicated logic registers      ; 0 / 33,216 ( 0 % )                              ;
 ; Total registers                    ; 0                                               ;
-; Total pins                         ; 30 / 475 ( 6 % )                                ;
+; Total pins                         ; 40 / 475 ( 8 % )                                ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0 / 483,840 ( 0 % )                             ;
 ; Embedded Multiplier 9-bit elements ; 0 / 70 ( 0 % )                                  ;
-; Total PLLs                         ; 0 / 4 ( 0 % )                                   ;
+; Total PLLs                         ; 1 / 4 ( 25 % )                                  ;
 +------------------------------------+-------------------------------------------------+
 
 
@@ -131,12 +135,12 @@ applicable agreement for further details.
 ; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.00        ;
+; Average used               ; 2.00        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ; < 0.1%      ;
+;     Processors 2-4         ;  33.3%      ;
 ;     Processors 5-8         ;   0.0%      ;
 +----------------------------+-------------+
 
@@ -147,8 +151,8 @@ applicable agreement for further details.
 ; Type                ; Value                  ;
 +---------------------+------------------------+
 ; Placement (by node) ;                        ;
-;     -- Requested    ; 0 / 34 ( 0.00 % )      ;
-;     -- Achieved     ; 0 / 34 ( 0.00 % )      ;
+;     -- Requested    ; 0 / 46 ( 0.00 % )      ;
+;     -- Achieved     ; 0 / 46 ( 0.00 % )      ;
 ;                     ;                        ;
 ; Routing (by net)    ;                        ;
 ;     -- Requested    ; 0 / 0 ( 0.00 % )       ;
@@ -171,8 +175,8 @@ applicable agreement for further details.
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
 ; Partition Name                 ; # Nodes ; # Preserved Nodes ; Preservation Level Used ; Netlist Type Used ;
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
-; Top                            ; 31      ; 0                 ; N/A                     ; Source File       ;
-; hard_block:auto_generated_inst ; 3       ; 0                 ; N/A                     ; Source File       ;
+; Top                            ; 41      ; 0                 ; N/A                     ; Source File       ;
+; hard_block:auto_generated_inst ; 5       ; 0                 ; N/A                     ; Source File       ;
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
 
 
@@ -208,7 +212,7 @@ The pin-out file can be found in D:/Snake/Quartus/output_files/Snake_Game.pin.
 ;                                             ;                     ;
 ; Total LABs:  partially or completely used   ; 0 / 2,076 ( 0 % )   ;
 ; Virtual pins                                ; 0                   ;
-; I/O pins                                    ; 30 / 475 ( 6 % )    ;
+; I/O pins                                    ; 40 / 475 ( 8 % )    ;
 ;     -- Clock pins                           ; 1 / 8 ( 13 % )      ;
 ;                                             ;                     ;
 ; Global signals                              ; 0                   ;
@@ -216,13 +220,17 @@ The pin-out file can be found in D:/Snake/Quartus/output_files/Snake_Game.pin.
 ; Total block memory bits                     ; 0 / 483,840 ( 0 % ) ;
 ; Total block memory implementation bits      ; 0 / 483,840 ( 0 % ) ;
 ; Embedded Multiplier 9-bit elements          ; 0 / 70 ( 0 % )      ;
-; PLLs                                        ; 0 / 4 ( 0 % )       ;
+; PLLs                                        ; 1 / 4 ( 25 % )      ;
 ; Global clocks                               ; 0 / 16 ( 0 % )      ;
 ; JTAGs                                       ; 0 / 1 ( 0 % )       ;
 ; ASMI blocks                                 ; 0 / 1 ( 0 % )       ;
 ; CRC blocks                                  ; 0 / 1 ( 0 % )       ;
 ; Average interconnect usage (total/H/V)      ; 0% / 0% / 0%        ;
 ; Peak interconnect usage (total/H/V)         ; 0% / 0% / 0%        ;
+; Maximum fan-out                             ; 1                   ;
+; Highest non-global fan-out                  ; 1                   ;
+; Total fan-out                               ; 3                   ;
+; Average fan-out                             ; 0.07                ;
 +---------------------------------------------+---------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
@@ -256,28 +264,30 @@ The pin-out file can be found in D:/Snake/Quartus/output_files/Snake_Game.pin.
 ; Total LABs:  partially or completely used   ; 0 / 2076 ( 0 % )  ; 0 / 2076 ( 0 % )               ;
 ;                                             ;                   ;                                ;
 ; Virtual pins                                ; 0                 ; 0                              ;
-; I/O pins                                    ; 30                ; 0                              ;
+; I/O pins                                    ; 40                ; 0                              ;
 ; Embedded Multiplier 9-bit elements          ; 0 / 70 ( 0 % )    ; 0 / 70 ( 0 % )                 ;
 ; Total memory bits                           ; 0                 ; 0                              ;
 ; Total RAM block bits                        ; 0                 ; 0                              ;
+; PLL                                         ; 0 / 4 ( 0 % )     ; 1 / 4 ( 25 % )                 ;
+; Clock control block                         ; 0 / 20 ( 0 % )    ; 1 / 20 ( 5 % )                 ;
 ;                                             ;                   ;                                ;
 ; Connections                                 ;                   ;                                ;
-;     -- Input Connections                    ; 0                 ; 0                              ;
+;     -- Input Connections                    ; 1                 ; 1                              ;
 ;     -- Registered Input Connections         ; 0                 ; 0                              ;
-;     -- Output Connections                   ; 0                 ; 0                              ;
+;     -- Output Connections                   ; 1                 ; 1                              ;
 ;     -- Registered Output Connections        ; 0                 ; 0                              ;
 ;                                             ;                   ;                                ;
 ; Internal Connections                        ;                   ;                                ;
-;     -- Total Connections                    ; 0                 ; 0                              ;
+;     -- Total Connections                    ; 2                 ; 3                              ;
 ;     -- Registered Connections               ; 0                 ; 0                              ;
 ;                                             ;                   ;                                ;
 ; External Connections                        ;                   ;                                ;
-;     -- Top                                  ; 0                 ; 0                              ;
-;     -- hard_block:auto_generated_inst       ; 0                 ; 0                              ;
+;     -- Top                                  ; 0                 ; 2                              ;
+;     -- hard_block:auto_generated_inst       ; 2                 ; 0                              ;
 ;                                             ;                   ;                                ;
 ; Partition Interface                         ;                   ;                                ;
-;     -- Input Ports                          ; 27                ; 0                              ;
-;     -- Output Ports                         ; 3                 ; 0                              ;
+;     -- Input Ports                          ; 6                 ; 1                              ;
+;     -- Output Ports                         ; 34                ; 1                              ;
 ;     -- Bidir Ports                          ; 0                 ; 0                              ;
 ;                                             ;                   ;                                ;
 ; Registered Ports                            ;                   ;                                ;
@@ -301,61 +311,71 @@ The pin-out file can be found in D:/Snake/Quartus/output_files/Snake_Game.pin.
 +----------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
 ; Name     ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Power Up High ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination ; Location assigned by ;
 +----------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
-; Xpos[0]  ; D13   ; 3        ; 31           ; 36           ; 3           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; Xpos[1]  ; C12   ; 3        ; 29           ; 36           ; 1           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; Xpos[2]  ; AB4   ; 1        ; 0            ; 3            ; 3           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; Xpos[3]  ; C11   ; 3        ; 29           ; 36           ; 3           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; Xpos[4]  ; V24   ; 6        ; 65           ; 10           ; 0           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; Xpos[5]  ; U21   ; 6        ; 65           ; 11           ; 0           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; Xpos[6]  ; U26   ; 6        ; 65           ; 13           ; 0           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; Xpos[7]  ; F12   ; 3        ; 27           ; 36           ; 3           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; Xpos[8]  ; J6    ; 2        ; 0            ; 29           ; 1           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; Xpos[9]  ; AE23  ; 7        ; 63           ; 0            ; 0           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; Ypos[0]  ; C6    ; 3        ; 1            ; 36           ; 2           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; Ypos[1]  ; AE20  ; 7        ; 53           ; 0            ; 0           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; Ypos[2]  ; T24   ; 6        ; 65           ; 15           ; 2           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; Ypos[3]  ; AB26  ; 6        ; 65           ; 7            ; 3           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; Ypos[4]  ; AC10  ; 8        ; 20           ; 0            ; 1           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; Ypos[5]  ; D10   ; 3        ; 20           ; 36           ; 0           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; Ypos[6]  ; T2    ; 1        ; 0            ; 15           ; 2           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; Ypos[7]  ; A9    ; 3        ; 20           ; 36           ; 2           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; Ypos[8]  ; AA18  ; 7        ; 50           ; 0            ; 0           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; Ypos[9]  ; U9    ; 1        ; 0            ; 13           ; 2           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; down_in  ; A8    ; 3        ; 16           ; 36           ; 0           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; left_in  ; D5    ; 3        ; 5            ; 36           ; 2           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; refresh  ; G10   ; 3        ; 14           ; 36           ; 0           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; reset    ; Y18   ; 7        ; 57           ; 0            ; 3           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; right_in ; B8    ; 3        ; 16           ; 36           ; 1           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; up_in    ; H11   ; 3        ; 18           ; 36           ; 3           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; vga_clk  ; C13   ; 3        ; 31           ; 36           ; 2           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; CLOCK_50 ; N2    ; 2        ; 0            ; 18           ; 0           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; rst_n    ; A17   ; 4        ; 42           ; 36           ; 1           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; sw_down  ; AE15  ; 7        ; 35           ; 0            ; 3           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; sw_left  ; F15   ; 4        ; 44           ; 36           ; 2           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; sw_right ; W23   ; 6        ; 65           ; 9            ; 0           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; sw_up    ; R19   ; 6        ; 65           ; 12           ; 0           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
 +----------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Output Pins                                                                                                                                                                                                                                                                                                                        ;
-+------+-------+----------+--------------+--------------+-------------+-----------------+------------------------+---------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-------------+----------------------+------+----------------------+---------------------+
-; Name ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Output Register ; Output Enable Register ; Power Up High ; PCI I/O Enabled ; Open Drain ; TRI Primitive ; Bus Hold ; Weak Pull Up ; I/O Standard ; Current Strength ; Termination ; Location assigned by ; Load ; Output Enable Source ; Output Enable Group ;
-+------+-------+----------+--------------+--------------+-------------+-----------------+------------------------+---------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-------------+----------------------+------+----------------------+---------------------+
-; B    ; B12   ; 3        ; 29           ; 36           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; G    ; D9    ; 3        ; 16           ; 36           ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; R    ; J13   ; 3        ; 24           ; 36           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-+------+-------+----------+--------------+--------------+-------------+-----------------+------------------------+---------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-------------+----------------------+------+----------------------+---------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Output Pins                                                                                                                                                                                                                                                                                                                             ;
++-----------+-------+----------+--------------+--------------+-------------+-----------------+------------------------+---------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-------------+----------------------+------+----------------------+---------------------+
+; Name      ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Output Register ; Output Enable Register ; Power Up High ; PCI I/O Enabled ; Open Drain ; TRI Primitive ; Bus Hold ; Weak Pull Up ; I/O Standard ; Current Strength ; Termination ; Location assigned by ; Load ; Output Enable Source ; Output Enable Group ;
++-----------+-------+----------+--------------+--------------+-------------+-----------------+------------------------+---------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-------------+----------------------+------+----------------------+---------------------+
+; b_out[0]  ; AB10  ; 8        ; 14           ; 0            ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; b_out[1]  ; Y4    ; 1        ; 0            ; 7            ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; b_out[2]  ; F18   ; 4        ; 50           ; 36           ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; b_out[3]  ; H1    ; 2        ; 0            ; 27           ; 4           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; b_out[4]  ; Y5    ; 1        ; 0            ; 4            ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; b_out[5]  ; W11   ; 8        ; 18           ; 0            ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; b_out[6]  ; B17   ; 4        ; 42           ; 36           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; b_out[7]  ; H8    ; 3        ; 7            ; 36           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; b_out[8]  ; B9    ; 3        ; 20           ; 36           ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; b_out[9]  ; V2    ; 1        ; 0            ; 12           ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; g_out[0]  ; AC12  ; 8        ; 24           ; 0            ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; g_out[1]  ; J17   ; 4        ; 48           ; 36           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; g_out[2]  ; J2    ; 2        ; 0            ; 26           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; g_out[3]  ; W10   ; 8        ; 7            ; 0            ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; g_out[4]  ; B4    ; 3        ; 1            ; 36           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; g_out[5]  ; AD22  ; 7        ; 61           ; 0            ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; g_out[6]  ; Y13   ; 7        ; 37           ; 0            ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; g_out[7]  ; L7    ; 2        ; 0            ; 24           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; g_out[8]  ; R2    ; 1        ; 0            ; 17           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; g_out[9]  ; R24   ; 6        ; 65           ; 17           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; r_out[0]  ; W25   ; 6        ; 65           ; 10           ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; r_out[1]  ; AD17  ; 7        ; 44           ; 0            ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; r_out[2]  ; Y14   ; 7        ; 37           ; 0            ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; r_out[3]  ; B14   ; 4        ; 33           ; 36           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; r_out[4]  ; F14   ; 4        ; 35           ; 36           ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; r_out[5]  ; U1    ; 1        ; 0            ; 13           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; r_out[6]  ; AF18  ; 7        ; 46           ; 0            ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; r_out[7]  ; R25   ; 6        ; 65           ; 17           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; r_out[8]  ; AD21  ; 7        ; 61           ; 0            ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; r_out[9]  ; AF20  ; 7        ; 53           ; 0            ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; vga_blank ; C25   ; 5        ; 65           ; 32           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; vga_clk   ; AA7   ; 1        ; 0            ; 2            ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; vga_hs    ; V10   ; 8        ; 5            ; 0            ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; vga_vs    ; AB15  ; 7        ; 40           ; 0            ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
++-----------+-------+----------+--------------+--------------+-------------+-----------------+------------------------+---------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-------------+----------------------+------+----------------------+---------------------+
 
 
-+------------------------------------------------------------+
-; I/O Bank Usage                                             ;
-+----------+------------------+---------------+--------------+
-; I/O Bank ; Usage            ; VCCIO Voltage ; VREF Voltage ;
-+----------+------------------+---------------+--------------+
-; 1        ; 3 / 64 ( 5 % )   ; 3.3V          ; --           ;
-; 2        ; 3 / 59 ( 5 % )   ; 3.3V          ; --           ;
-; 3        ; 16 / 56 ( 29 % ) ; 3.3V          ; --           ;
-; 4        ; 0 / 58 ( 0 % )   ; 3.3V          ; --           ;
-; 5        ; 0 / 65 ( 0 % )   ; 3.3V          ; --           ;
-; 6        ; 6 / 59 ( 10 % )  ; 3.3V          ; --           ;
-; 7        ; 4 / 58 ( 7 % )   ; 3.3V          ; --           ;
-; 8        ; 1 / 56 ( 2 % )   ; 3.3V          ; --           ;
-+----------+------------------+---------------+--------------+
++-----------------------------------------------------------+
+; I/O Bank Usage                                            ;
++----------+-----------------+---------------+--------------+
+; I/O Bank ; Usage           ; VCCIO Voltage ; VREF Voltage ;
++----------+-----------------+---------------+--------------+
+; 1        ; 6 / 64 ( 9 % )  ; 3.3V          ; --           ;
+; 2        ; 6 / 59 ( 10 % ) ; 3.3V          ; --           ;
+; 3        ; 3 / 56 ( 5 % )  ; 3.3V          ; --           ;
+; 4        ; 7 / 58 ( 12 % ) ; 3.3V          ; --           ;
+; 5        ; 1 / 65 ( 2 % )  ; 3.3V          ; --           ;
+; 6        ; 6 / 59 ( 10 % ) ; 3.3V          ; --           ;
+; 7        ; 9 / 58 ( 16 % ) ; 3.3V          ; --           ;
+; 8        ; 5 / 56 ( 9 % )  ; 3.3V          ; --           ;
++----------+-----------------+---------------+--------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -369,8 +389,8 @@ The pin-out file can be found in D:/Snake/Quartus/output_files/Snake_Game.pin.
 ; A5       ; 482        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; A6       ; 479        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; A7       ; 465        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; A8       ; 457        ; 3        ; down_in                                  ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; A9       ; 451        ; 3        ; Ypos[7]                                  ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; A8       ; 457        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; A9       ; 451        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; A10      ; 447        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; A11      ;            ; 3        ; VCCIO3                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; A12      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
@@ -378,7 +398,7 @@ The pin-out file can be found in D:/Snake/Quartus/output_files/Snake_Game.pin.
 ; A14      ; 427        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; A15      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; A16      ;            ; 4        ; VCCIO4                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
-; A17      ; 412        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; A17      ; 412        ; 4        ; rst_n                                    ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; A18      ; 406        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; A19      ; 394        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; A20      ; 390        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -393,7 +413,7 @@ The pin-out file can be found in D:/Snake/Quartus/output_files/Snake_Game.pin.
 ; AA4      ; 116        ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; AA5      ; 120        ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; AA6      ; 130        ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; AA7      ; 129        ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; AA7      ; 129        ; 1        ; vga_clk                                  ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; AA8      ;            ;          ; VCCA_PLL1                                ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; AA9      ; 152        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AA10     ; 153        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -404,7 +424,7 @@ The pin-out file can be found in D:/Snake/Quartus/output_files/Snake_Game.pin.
 ; AA15     ; 197        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AA16     ; 209        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AA17     ; 219        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; AA18     ; 220        ; 7        ; Ypos[8]                                  ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; AA18     ; 220        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AA19     ;            ;          ; VCCA_PLL4                                ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; AA20     ; 230        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AA21     ;            ;          ; GND_PLL4                                 ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
@@ -416,18 +436,18 @@ The pin-out file can be found in D:/Snake/Quartus/output_files/Snake_Game.pin.
 ; AB1      ; 115        ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; AB2      ; 114        ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; AB3      ; 126        ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; AB4      ; 127        ; 1        ; Xpos[2]                                  ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; AB4      ; 127        ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; AB5      ;            ; 1        ; VCCIO1                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; AB6      ;            ; 8        ; VCCIO8                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; AB7      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; AB8      ; 147        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AB9      ;            ; 8        ; VCCIO8                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
-; AB10     ; 154        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; AB10     ; 154        ; 8        ; b_out[0]                                 ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; AB11     ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; AB12     ; 171        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AB13     ;            ; 8        ; VCCIO8                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; AB14     ;            ; 7        ; VCCIO7                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
-; AB15     ; 198        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; AB15     ; 198        ; 7        ; vga_vs                                   ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; AB16     ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; AB17     ;            ; 7        ; VCCIO7                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; AB18     ; 215        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -438,7 +458,7 @@ The pin-out file can be found in D:/Snake/Quartus/output_files/Snake_Game.pin.
 ; AB23     ; 258        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; AB24     ; 257        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; AB25     ; 263        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; AB26     ; 262        ; 6        ; Ypos[3]                                  ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; AB26     ; 262        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; AC1      ; 119        ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; AC2      ; 118        ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; AC3      ; 128        ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -448,9 +468,9 @@ The pin-out file can be found in D:/Snake/Quartus/output_files/Snake_Game.pin.
 ; AC7      ; 143        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
 ; AC8      ; 148        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AC9      ; 163        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; AC10     ; 164        ; 8        ; Ypos[4]                                  ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; AC10     ; 164        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AC11     ; 168        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; AC12     ; 172        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
+; AC12     ; 172        ; 8        ; g_out[0]                                 ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; AC13     ; 185        ; 8        ; GND+                                     ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
 ; AC14     ; 191        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AC15     ; 199        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -481,12 +501,12 @@ The pin-out file can be found in D:/Snake/Quartus/output_files/Snake_Game.pin.
 ; AD14     ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; AD15     ; 190        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AD16     ; 201        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; AD17     ; 208        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; AD17     ; 208        ; 7        ; r_out[1]                                 ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; AD18     ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; AD19     ; 221        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AD20     ;            ; 7        ; VCCIO7                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
-; AD21     ; 238        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; AD22     ; 240        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; AD21     ; 238        ; 7        ; r_out[8]                                 ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; AD22     ; 240        ; 7        ; g_out[5]                                 ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; AD23     ; 239        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AD24     ; 249        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; AD25     ; 248        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -505,15 +525,15 @@ The pin-out file can be found in D:/Snake/Quartus/output_files/Snake_Game.pin.
 ; AE12     ; 182        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AE13     ; 183        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AE14     ; 188        ; 7        ; GND+                                     ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
-; AE15     ; 189        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; AE15     ; 189        ; 7        ; sw_down                                  ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; AE16     ; 200        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AE17     ; 206        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AE18     ; 212        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AE19     ; 214        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; AE20     ; 224        ; 7        ; Ypos[1]                                  ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; AE20     ; 224        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AE21     ; 228        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AE22     ; 236        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; AE23     ; 244        ; 7        ; Xpos[9]                                  ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; AE23     ; 244        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AE24     ; 247        ; 6        ; ~LVDS150p/nCEO~                          ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; AE25     ; 246        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; AE26     ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
@@ -533,9 +553,9 @@ The pin-out file can be found in D:/Snake/Quartus/output_files/Snake_Game.pin.
 ; AF15     ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; AF16     ;            ; 7        ; VCCIO7                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; AF17     ; 205        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; AF18     ; 211        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; AF18     ; 211        ; 7        ; r_out[6]                                 ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; AF19     ; 213        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; AF20     ; 223        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; AF20     ; 223        ; 7        ; r_out[9]                                 ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; AF21     ; 227        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AF22     ; 235        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AF23     ; 243        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -544,20 +564,20 @@ The pin-out file can be found in D:/Snake/Quartus/output_files/Snake_Game.pin.
 ; B1       ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; B2       ; 2          ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; B3       ; 3          ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; B4       ; 483        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; B4       ; 483        ; 3        ; g_out[4]                                 ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; B5       ; 481        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; B6       ; 480        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; B7       ; 466        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; B8       ; 458        ; 3        ; right_in                                 ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; B9       ; 452        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; B8       ; 458        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; B9       ; 452        ; 3        ; b_out[8]                                 ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; B10      ; 448        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; B11      ; 435        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; B12      ; 433        ; 3        ; B                                        ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; B12      ; 433        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; B13      ; 429        ; 4        ; GND+                                     ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
-; B14      ; 428        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; B14      ; 428        ; 4        ; r_out[3]                                 ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; B15      ; 420        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; B16      ; 419        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; B17      ; 411        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; B17      ; 411        ; 4        ; b_out[6]                                 ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; B18      ; 405        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; B19      ; 393        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; B20      ; 389        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -572,14 +592,14 @@ The pin-out file can be found in D:/Snake/Quartus/output_files/Snake_Game.pin.
 ; C3       ; 7          ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; C4       ; 478        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; C5       ; 486        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; C6       ; 485        ; 3        ; Ypos[0]                                  ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; C6       ; 485        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; C7       ; 468        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; C8       ; 463        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; C9       ; 459        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; C10      ; 450        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; C11      ; 436        ; 3        ; Xpos[3]                                  ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; C12      ; 434        ; 3        ; Xpos[1]                                  ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; C13      ; 431        ; 3        ; vga_clk                                  ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; C11      ; 436        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; C12      ; 434        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; C13      ; 431        ; 3        ; GND+                                     ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
 ; C14      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; C15      ; 421        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; C16      ; 418        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -591,21 +611,21 @@ The pin-out file can be found in D:/Snake/Quartus/output_files/Snake_Game.pin.
 ; C22      ; 374        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; C23      ; 373        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; C24      ; 360        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; C25      ; 361        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; C25      ; 361        ; 5        ; vga_blank                                ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; C26      ;            ; 5        ; VCCIO5                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; D1       ; 13         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; D2       ; 12         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; D3       ; 1          ; 2        ; ~nCSO~ / RESERVED_INPUT_WITH_WEAK_PULLUP ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; On           ;
 ; D4       ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; D5       ; 477        ; 3        ; left_in                                  ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; D5       ; 477        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; D6       ; 467        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; D7       ; 469        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; D8       ; 464        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; D9       ; 460        ; 3        ; G                                        ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; D10      ; 449        ; 3        ; Ypos[5]                                  ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; D9       ; 460        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; D10      ; 449        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; D11      ; 445        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
 ; D12      ; 443        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; D13      ; 432        ; 3        ; Xpos[0]                                  ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; D13      ; 432        ; 3        ; GND+                                     ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
 ; D14      ; 426        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; D15      ; 417        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; D16      ; 415        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
@@ -656,13 +676,13 @@ The pin-out file can be found in D:/Snake/Quartus/output_files/Snake_Game.pin.
 ; F9       ; 470        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; F10      ; 462        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; F11      ; 454        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; F12      ; 440        ; 3        ; Xpos[7]                                  ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; F12      ; 440        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; F13      ; 423        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; F14      ; 425        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; F15      ; 409        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; F14      ; 425        ; 4        ; r_out[4]                                 ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; F15      ; 409        ; 4        ; sw_left                                  ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; F16      ; 408        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; F17      ; 401        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; F18      ; 398        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; F18      ; 398        ; 4        ; b_out[2]                                 ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; F19      ;            ;          ; GNDA_PLL2                                ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; F20      ; 372        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; F21      ; 371        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -680,7 +700,7 @@ The pin-out file can be found in D:/Snake/Quartus/output_files/Snake_Game.pin.
 ; G7       ;            ;          ; GND_PLL3                                 ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; G8       ;            ;          ; VCCA_PLL3                                ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; G9       ; 471        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; G10      ; 461        ; 3        ; refresh                                  ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; G10      ; 461        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; G11      ; 446        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; G12      ; 439        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; G13      ; 422        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -697,17 +717,17 @@ The pin-out file can be found in D:/Snake/Quartus/output_files/Snake_Game.pin.
 ; G24      ; 345        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; G25      ; 343        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; G26      ; 342        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; H1       ; 37         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; H1       ; 37         ; 2        ; b_out[3]                                 ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; H2       ; 36         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; H3       ; 32         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; H4       ; 33         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; H5       ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; H6       ; 18         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; H7       ;            ;          ; VCCD_PLL3                                ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
-; H8       ; 473        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; H8       ; 473        ; 3        ; b_out[7]                                 ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; H9       ;            ; 3        ; VCCIO3                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; H10      ; 472        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; H11      ; 456        ; 3        ; up_in                                    ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; H11      ; 456        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; H12      ; 455        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; H13      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; H14      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
@@ -724,22 +744,22 @@ The pin-out file can be found in D:/Snake/Quartus/output_files/Snake_Game.pin.
 ; H25      ; 337        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; H26      ; 336        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; J1       ; 39         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; J2       ; 38         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; J2       ; 38         ; 2        ; g_out[2]                                 ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; J3       ; 34         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; J4       ; 35         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; J5       ; 15         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
-; J6       ; 25         ; 2        ; Xpos[8]                                  ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; J6       ; 25         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; J7       ; 17         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; J8       ; 16         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; J9       ; 475        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; J10      ; 438        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; J11      ; 437        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; J12      ;            ; 3        ; VCCIO3                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
-; J13      ; 442        ; 3        ; R                                        ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; J13      ; 442        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; J14      ; 441        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; J15      ;            ; 4        ; VCCIO4                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; J16      ; 385        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; J17      ; 399        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; J17      ; 399        ; 4        ; g_out[1]                                 ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; J18      ; 383        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; J19      ;            ; 5        ; VCCIO5                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; J20      ; 351        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -781,7 +801,7 @@ The pin-out file can be found in D:/Snake/Quartus/output_files/Snake_Game.pin.
 ; L4       ; 44         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
 ; L5       ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; L6       ; 48         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; L7       ; 47         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; L7       ; 47         ; 2        ; g_out[7]                                 ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; L8       ; 59         ; 2        ; #TMS                                     ; input  ;              ;         ; --         ;                 ; --       ; --           ;
 ; L9       ; 49         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; L10      ; 52         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -828,7 +848,7 @@ The pin-out file can be found in D:/Snake/Quartus/output_files/Snake_Game.pin.
 ; M25      ; 312        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; M26      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; N1       ; 65         ; 2        ; GND+                                     ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
-; N2       ; 64         ; 2        ; GND+                                     ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
+; N2       ; 64         ; 2        ; CLOCK_50                                 ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; N3       ; 62         ; 2        ; ^DATA0                                   ; input  ;              ;         ; --         ;                 ; --       ; --           ;
 ; N4       ; 63         ; 2        ; ^nCE                                     ;        ;              ;         ; --         ;                 ; --       ; --           ;
 ; N5       ;            ; 2        ; VCCIO2                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
@@ -880,7 +900,7 @@ The pin-out file can be found in D:/Snake/Quartus/output_files/Snake_Game.pin.
 ; P25      ; 307        ; 6        ; GND+                                     ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
 ; P26      ; 306        ; 6        ; GND+                                     ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
 ; R1       ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; R2       ; 71         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; R2       ; 71         ; 1        ; g_out[8]                                 ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; R3       ; 72         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; R4       ; 73         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; R5       ; 74         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -897,16 +917,16 @@ The pin-out file can be found in D:/Snake/Quartus/output_files/Snake_Game.pin.
 ; R16      ;            ;          ; VCCINT                                   ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; R17      ; 294        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; R18      ;            ; 6        ; VCCIO6                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
-; R19      ; 282        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; R19      ; 282        ; 6        ; sw_up                                    ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; R20      ; 297        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; R21      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; R22      ; 298        ; 6        ; ^nSTATUS                                 ;        ;              ;         ; --         ;                 ; --       ; --           ;
 ; R23      ; 299        ; 6        ; ^CONF_DONE                               ;        ;              ;         ; --         ;                 ; --       ; --           ;
-; R24      ; 302        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; R25      ; 303        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; R24      ; 302        ; 6        ; g_out[9]                                 ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; R25      ; 303        ; 6        ; r_out[7]                                 ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; R26      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; T1       ;            ; 1        ; VCCIO1                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
-; T2       ; 79         ; 1        ; Ypos[6]                                  ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; T2       ; 79         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; T3       ; 80         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; T4       ; 83         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
 ; T5       ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
@@ -928,10 +948,10 @@ The pin-out file can be found in D:/Snake/Quartus/output_files/Snake_Game.pin.
 ; T21      ; 288        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
 ; T22      ; 296        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; T23      ; 295        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; T24      ; 292        ; 6        ; Ypos[2]                                  ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; T24      ; 292        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; T25      ; 291        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; T26      ;            ; 6        ; VCCIO6                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
-; U1       ; 85         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; U1       ; 85         ; 1        ; r_out[5]                                 ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; U2       ; 84         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; U3       ; 88         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; U4       ; 89         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -939,7 +959,7 @@ The pin-out file can be found in D:/Snake/Quartus/output_files/Snake_Game.pin.
 ; U6       ; 98         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; U7       ; 99         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; U8       ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; U9       ; 86         ; 1        ; Ypos[9]                                  ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; U9       ; 86         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; U10      ; 87         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; U11      ;            ;          ; VCCINT                                   ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; U12      ; 178        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -951,14 +971,14 @@ The pin-out file can be found in D:/Snake/Quartus/output_files/Snake_Game.pin.
 ; U18      ; 232        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; U19      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; U20      ; 280        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; U21      ; 279        ; 6        ; Xpos[5]                                  ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; U21      ; 279        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; U22      ; 270        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; U23      ; 284        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; U24      ; 283        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; U25      ; 285        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; U26      ; 286        ; 6        ; Xpos[6]                                  ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; U26      ; 286        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; V1       ; 90         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; V2       ; 91         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; V2       ; 91         ; 1        ; b_out[9]                                 ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; V3       ; 95         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; V4       ; 94         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; V5       ; 104        ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -966,7 +986,7 @@ The pin-out file can be found in D:/Snake/Quartus/output_files/Snake_Game.pin.
 ; V7       ; 112        ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; V8       ;            ; 1        ; VCCIO1                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; V9       ; 142        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; V10      ; 141        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; V10      ; 141        ; 8        ; vga_hs                                   ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; V11      ; 177        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; V12      ;            ; 8        ; VCCIO8                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; V13      ; 176        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -980,7 +1000,7 @@ The pin-out file can be found in D:/Snake/Quartus/output_files/Snake_Game.pin.
 ; V21      ; 252        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; V22      ; 259        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
 ; V23      ; 275        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; V24      ; 276        ; 6        ; Xpos[4]                                  ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; V24      ; 276        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; V25      ; 277        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; V26      ; 278        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; W1       ; 97         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -992,8 +1012,8 @@ The pin-out file can be found in D:/Snake/Quartus/output_files/Snake_Game.pin.
 ; W7       ;            ;          ; GND_PLL1                                 ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; W8       ; 144        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; W9       ;            ; 8        ; VCCIO8                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
-; W10      ; 145        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; W11      ; 161        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; W10      ; 145        ; 8        ; g_out[3]                                 ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; W11      ; 161        ; 8        ; b_out[5]                                 ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; W12      ; 162        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; W13      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; W14      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
@@ -1005,15 +1025,15 @@ The pin-out file can be found in D:/Snake/Quartus/output_files/Snake_Game.pin.
 ; W20      ;            ;          ; GND_PLL4                                 ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; W21      ; 253        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; W22      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; W23      ; 272        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; W23      ; 272        ; 6        ; sw_right                                 ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; W24      ; 271        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; W25      ; 273        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; W25      ; 273        ; 6        ; r_out[0]                                 ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; W26      ; 274        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; Y1       ; 103        ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; Y2       ;            ;          ; NC                                       ;        ;              ;         ; --         ;                 ; --       ; --           ;
 ; Y3       ; 108        ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; Y4       ; 109        ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; Y5       ; 121        ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; Y4       ; 109        ; 1        ; b_out[1]                                 ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; Y5       ; 121        ; 1        ; b_out[4]                                 ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; Y6       ;            ;          ; GND_PLL1                                 ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; Y7       ;            ;          ; VCCD_PLL1                                ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; Y8       ;            ;          ; GNDA_PLL1                                ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
@@ -1021,12 +1041,12 @@ The pin-out file can be found in D:/Snake/Quartus/output_files/Snake_Game.pin.
 ; Y10      ; 146        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; Y11      ; 156        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; Y12      ; 180        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; Y13      ; 193        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; Y14      ; 195        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; Y13      ; 193        ; 7        ; g_out[6]                                 ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; Y14      ; 195        ; 7        ; r_out[2]                                 ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; Y15      ; 196        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; Y16      ; 210        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; Y17      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; Y18      ; 229        ; 7        ; reset                                    ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; Y18      ; 229        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
 ; Y19      ;            ;          ; GNDA_PLL4                                ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; Y20      ;            ;          ; VCCD_PLL4                                ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; Y21      ; 250        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -1037,6 +1057,48 @@ The pin-out file can be found in D:/Snake/Quartus/output_files/Snake_Game.pin.
 ; Y26      ; 268        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 +----------+------------+----------+------------------------------------------+--------+--------------+---------+------------+-----------------+----------+--------------+
 Note: Pin directions (input, output or bidir) are based on device operating in user mode.
+
+
++--------------------------------------------------------------------------------------------+
+; PLL Summary                                                                                ;
++----------------------------------+---------------------------------------------------------+
+; Name                             ; generate_clk:gen|my_pll:pll|altpll:altpll_component|pll ;
++----------------------------------+---------------------------------------------------------+
+; SDC pin name                     ; gen|pll|altpll_component|pll                            ;
+; PLL mode                         ; Normal                                                  ;
+; Compensate clock                 ; clock0                                                  ;
+; Compensated input/output pins    ; --                                                      ;
+; Self reset on gated loss of lock ; Off                                                     ;
+; Gate lock counter                ; --                                                      ;
+; Input frequency 0                ; 50.0 MHz                                                ;
+; Input frequency 1                ; --                                                      ;
+; Nominal PFD frequency            ; 50.0 MHz                                                ;
+; Nominal VCO frequency            ; 800.0 MHz                                               ;
+; VCO post scale K counter         ; --                                                      ;
+; VCO multiply                     ; --                                                      ;
+; VCO divide                       ; --                                                      ;
+; Freq min lock                    ; 31.25 MHz                                               ;
+; Freq max lock                    ; 62.5 MHz                                                ;
+; M VCO Tap                        ; 0                                                       ;
+; M Initial                        ; 1                                                       ;
+; M value                          ; 16                                                      ;
+; N value                          ; 1                                                       ;
+; Preserve PLL counter order       ; Off                                                     ;
+; PLL location                     ; PLL_1                                                   ;
+; Inclk0 signal                    ; CLOCK_50                                                ;
+; Inclk1 signal                    ; --                                                      ;
+; Inclk0 signal type               ; Dedicated Pin                                           ;
+; Inclk1 signal type               ; --                                                      ;
++----------------------------------+---------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; PLL Usage                                                                                                                                                                                                                            ;
++-----------------------------------------------------------+--------------+------+-----+------------------+-------------+------------+---------+---------------+------------+---------+---------+-------------------------------------+
+; Name                                                      ; Output Clock ; Mult ; Div ; Output Frequency ; Phase Shift ; Duty Cycle ; Counter ; Counter Value ; High / Low ; Initial ; VCO Tap ; SDC Pin Name                        ;
++-----------------------------------------------------------+--------------+------+-----+------------------+-------------+------------+---------+---------------+------------+---------+---------+-------------------------------------+
+; generate_clk:gen|my_pll:pll|altpll:altpll_component|_clk0 ; clock0       ; 1    ; 2   ; 25.0 MHz         ; 0 (0 ps)    ; 50/50      ; C2      ; 32            ; 16/16 Even ; 1       ; 0       ; gen|pll|altpll_component|pll|clk[0] ;
++-----------------------------------------------------------+--------------+------+-----+------------------+-------------+------------+---------+---------------+------------+---------+---------+-------------------------------------+
 
 
 +-------------------------------------------------------------------------------+
@@ -1076,52 +1138,65 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 Note: User assignments will override these defaults. The user specified values are listed in the Output Pins and Bidir Pins tables.
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Fitter Resource Utilization by Entity                                                                                                                                                                                                                           ;
-+----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------+--------------+
-; Compilation Hierarchy Node ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M4Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name ; Library Name ;
-+----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------+--------------+
-; |snake_controller          ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 30   ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |snake_controller   ; work         ;
-+----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------+--------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter Resource Utilization by Entity                                                                                                                                                                                                                                                                         ;
++------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+-----------------------------------------------------------+--------------+
+; Compilation Hierarchy Node         ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M4Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                       ; Library Name ;
++------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+-----------------------------------------------------------+--------------+
+; |game                              ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 40   ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |game                                                     ; work         ;
+;    |generate_clk:gen|              ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |game|generate_clk:gen                                    ; work         ;
+;       |my_pll:pll|                 ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |game|generate_clk:gen|my_pll:pll                         ; work         ;
+;          |altpll:altpll_component| ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |game|generate_clk:gen|my_pll:pll|altpll:altpll_component ; work         ;
++------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+-----------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+-----------------------------------------------------------------------------------+
-; Delay Chain Summary                                                               ;
-+----------+----------+---------------+---------------+-----------------------+-----+
-; Name     ; Pin Type ; Pad to Core 0 ; Pad to Core 1 ; Pad to Input Register ; TCO ;
-+----------+----------+---------------+---------------+-----------------------+-----+
-; vga_clk  ; Input    ; (0) 170 ps    ; (0) 170 ps    ; --                    ; --  ;
-; Xpos[0]  ; Input    ; (0) 170 ps    ; (0) 170 ps    ; --                    ; --  ;
-; Xpos[1]  ; Input    ; (0) 170 ps    ; (0) 170 ps    ; --                    ; --  ;
-; Xpos[2]  ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
-; Xpos[3]  ; Input    ; (0) 170 ps    ; (0) 170 ps    ; --                    ; --  ;
-; Xpos[4]  ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
-; Xpos[5]  ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
-; Xpos[6]  ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
-; Xpos[7]  ; Input    ; (0) 170 ps    ; (0) 170 ps    ; --                    ; --  ;
-; Xpos[8]  ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
-; Xpos[9]  ; Input    ; (0) 170 ps    ; (0) 170 ps    ; --                    ; --  ;
-; Ypos[0]  ; Input    ; (0) 170 ps    ; (0) 170 ps    ; --                    ; --  ;
-; Ypos[1]  ; Input    ; (0) 170 ps    ; (0) 170 ps    ; --                    ; --  ;
-; Ypos[2]  ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
-; Ypos[3]  ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
-; Ypos[4]  ; Input    ; (0) 170 ps    ; (0) 170 ps    ; --                    ; --  ;
-; Ypos[5]  ; Input    ; (0) 170 ps    ; (0) 170 ps    ; --                    ; --  ;
-; Ypos[6]  ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
-; Ypos[7]  ; Input    ; (0) 170 ps    ; (0) 170 ps    ; --                    ; --  ;
-; Ypos[8]  ; Input    ; (0) 170 ps    ; (0) 170 ps    ; --                    ; --  ;
-; Ypos[9]  ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
-; R        ; Output   ; --            ; --            ; --                    ; --  ;
-; G        ; Output   ; --            ; --            ; --                    ; --  ;
-; B        ; Output   ; --            ; --            ; --                    ; --  ;
-; left_in  ; Input    ; (0) 170 ps    ; (0) 170 ps    ; --                    ; --  ;
-; reset    ; Input    ; (0) 170 ps    ; (0) 170 ps    ; --                    ; --  ;
-; up_in    ; Input    ; (0) 170 ps    ; (0) 170 ps    ; --                    ; --  ;
-; down_in  ; Input    ; (0) 170 ps    ; (0) 170 ps    ; --                    ; --  ;
-; right_in ; Input    ; (0) 170 ps    ; (0) 170 ps    ; --                    ; --  ;
-; refresh  ; Input    ; (0) 170 ps    ; (0) 170 ps    ; --                    ; --  ;
-+----------+----------+---------------+---------------+-----------------------+-----+
++------------------------------------------------------------------------------------+
+; Delay Chain Summary                                                                ;
++-----------+----------+---------------+---------------+-----------------------+-----+
+; Name      ; Pin Type ; Pad to Core 0 ; Pad to Core 1 ; Pad to Input Register ; TCO ;
++-----------+----------+---------------+---------------+-----------------------+-----+
+; sw_up     ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
+; r_out[0]  ; Output   ; --            ; --            ; --                    ; --  ;
+; r_out[1]  ; Output   ; --            ; --            ; --                    ; --  ;
+; r_out[2]  ; Output   ; --            ; --            ; --                    ; --  ;
+; r_out[3]  ; Output   ; --            ; --            ; --                    ; --  ;
+; r_out[4]  ; Output   ; --            ; --            ; --                    ; --  ;
+; r_out[5]  ; Output   ; --            ; --            ; --                    ; --  ;
+; r_out[6]  ; Output   ; --            ; --            ; --                    ; --  ;
+; r_out[7]  ; Output   ; --            ; --            ; --                    ; --  ;
+; r_out[8]  ; Output   ; --            ; --            ; --                    ; --  ;
+; r_out[9]  ; Output   ; --            ; --            ; --                    ; --  ;
+; g_out[0]  ; Output   ; --            ; --            ; --                    ; --  ;
+; g_out[1]  ; Output   ; --            ; --            ; --                    ; --  ;
+; g_out[2]  ; Output   ; --            ; --            ; --                    ; --  ;
+; g_out[3]  ; Output   ; --            ; --            ; --                    ; --  ;
+; g_out[4]  ; Output   ; --            ; --            ; --                    ; --  ;
+; g_out[5]  ; Output   ; --            ; --            ; --                    ; --  ;
+; g_out[6]  ; Output   ; --            ; --            ; --                    ; --  ;
+; g_out[7]  ; Output   ; --            ; --            ; --                    ; --  ;
+; g_out[8]  ; Output   ; --            ; --            ; --                    ; --  ;
+; g_out[9]  ; Output   ; --            ; --            ; --                    ; --  ;
+; b_out[0]  ; Output   ; --            ; --            ; --                    ; --  ;
+; b_out[1]  ; Output   ; --            ; --            ; --                    ; --  ;
+; b_out[2]  ; Output   ; --            ; --            ; --                    ; --  ;
+; b_out[3]  ; Output   ; --            ; --            ; --                    ; --  ;
+; b_out[4]  ; Output   ; --            ; --            ; --                    ; --  ;
+; b_out[5]  ; Output   ; --            ; --            ; --                    ; --  ;
+; b_out[6]  ; Output   ; --            ; --            ; --                    ; --  ;
+; b_out[7]  ; Output   ; --            ; --            ; --                    ; --  ;
+; b_out[8]  ; Output   ; --            ; --            ; --                    ; --  ;
+; b_out[9]  ; Output   ; --            ; --            ; --                    ; --  ;
+; vga_hs    ; Output   ; --            ; --            ; --                    ; --  ;
+; vga_vs    ; Output   ; --            ; --            ; --                    ; --  ;
+; vga_blank ; Output   ; --            ; --            ; --                    ; --  ;
+; vga_clk   ; Output   ; --            ; --            ; --                    ; --  ;
+; sw_left   ; Input    ; (0) 170 ps    ; (0) 170 ps    ; --                    ; --  ;
+; rst_n     ; Input    ; (0) 170 ps    ; (0) 170 ps    ; --                    ; --  ;
+; sw_down   ; Input    ; (0) 170 ps    ; (0) 170 ps    ; --                    ; --  ;
+; sw_right  ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
+; CLOCK_50  ; Input    ; --            ; --            ; --                    ; --  ;
++-----------+----------+---------------+---------------+-----------------------+-----+
 
 
 +---------------------------------------------------+
@@ -1129,34 +1204,32 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------+-------------------+---------+
 ; Source Pin / Fanout ; Pad To Core Index ; Setting ;
 +---------------------+-------------------+---------+
-; vga_clk             ;                   ;         ;
-; Xpos[0]             ;                   ;         ;
-; Xpos[1]             ;                   ;         ;
-; Xpos[2]             ;                   ;         ;
-; Xpos[3]             ;                   ;         ;
-; Xpos[4]             ;                   ;         ;
-; Xpos[5]             ;                   ;         ;
-; Xpos[6]             ;                   ;         ;
-; Xpos[7]             ;                   ;         ;
-; Xpos[8]             ;                   ;         ;
-; Xpos[9]             ;                   ;         ;
-; Ypos[0]             ;                   ;         ;
-; Ypos[1]             ;                   ;         ;
-; Ypos[2]             ;                   ;         ;
-; Ypos[3]             ;                   ;         ;
-; Ypos[4]             ;                   ;         ;
-; Ypos[5]             ;                   ;         ;
-; Ypos[6]             ;                   ;         ;
-; Ypos[7]             ;                   ;         ;
-; Ypos[8]             ;                   ;         ;
-; Ypos[9]             ;                   ;         ;
-; left_in             ;                   ;         ;
-; reset               ;                   ;         ;
-; up_in               ;                   ;         ;
-; down_in             ;                   ;         ;
-; right_in            ;                   ;         ;
-; refresh             ;                   ;         ;
+; sw_up               ;                   ;         ;
+; sw_left             ;                   ;         ;
+; rst_n               ;                   ;         ;
+; sw_down             ;                   ;         ;
+; sw_right            ;                   ;         ;
+; CLOCK_50            ;                   ;         ;
 +---------------------+-------------------+---------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Control Signals                                                                                                      ;
++----------+----------+---------+-------+--------+----------------------+------------------+---------------------------+
+; Name     ; Location ; Fan-Out ; Usage ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++----------+----------+---------+-------+--------+----------------------+------------------+---------------------------+
+; CLOCK_50 ; PIN_N2   ; 1       ; Clock ; no     ; --                   ; --               ; --                        ;
++----------+----------+---------+-------+--------+----------------------+------------------+---------------------------+
+
+
++---------------------------------------------------------------------------------------+
+; Non-Global High Fan-Out Signals                                                       ;
++-----------------------------------------------------------------------------+---------+
+; Name                                                                        ; Fan-Out ;
++-----------------------------------------------------------------------------+---------+
+; generate_clk:gen|my_pll:pll|altpll:altpll_component|_clk0~clkctrl_e_vga_clk ; 1       ;
+; CLOCK_50                                                                    ; 1       ;
++-----------------------------------------------------------------------------+---------+
 
 
 +--------------------------------------------------+
@@ -1210,6 +1283,8 @@ Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. How
 Info (119006): Selected device EP2C35F672C6 for design "Snake_Game"
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
+Info (15535): Implemented PLL "generate_clk:gen|my_pll:pll|altpll:altpll_component|pll" as Cyclone II PLL type
+    Info (15099): Implementing clock multiplication of 1, clock division of 2, and phase shift of 0 degrees (0 ps) for generate_clk:gen|my_pll:pll|altpll:altpll_component|_clk0 port
 Info (171003): Fitter is performing an Auto Fit compilation, which may decrease Fitter effort to reduce compilation time
 Warning (292013): Feature LogicLock is only available with a valid subscription license. You can purchase a software subscription to gain full access to this feature.
 Info (176444): Device migration not selected. If you intend to use device migration later, you may need to change the pin assignments as they may be incompatible with other devices
@@ -1219,58 +1294,71 @@ Info (169124): Fitter converted 3 user pins into dedicated programming pins
     Info (169125): Pin ~ASDO~ is reserved at location E3
     Info (169125): Pin ~nCSO~ is reserved at location D3
     Info (169125): Pin ~LVDS150p/nCEO~ is reserved at location AE24
-Critical Warning (169085): No exact pin location assignment(s) for 30 pins of 30 total pins
+Critical Warning (169085): No exact pin location assignment(s) for 40 pins of 40 total pins
+    Info (169086): Pin sw_up not assigned to an exact location on the device
+    Info (169086): Pin r_out[0] not assigned to an exact location on the device
+    Info (169086): Pin r_out[1] not assigned to an exact location on the device
+    Info (169086): Pin r_out[2] not assigned to an exact location on the device
+    Info (169086): Pin r_out[3] not assigned to an exact location on the device
+    Info (169086): Pin r_out[4] not assigned to an exact location on the device
+    Info (169086): Pin r_out[5] not assigned to an exact location on the device
+    Info (169086): Pin r_out[6] not assigned to an exact location on the device
+    Info (169086): Pin r_out[7] not assigned to an exact location on the device
+    Info (169086): Pin r_out[8] not assigned to an exact location on the device
+    Info (169086): Pin r_out[9] not assigned to an exact location on the device
+    Info (169086): Pin g_out[0] not assigned to an exact location on the device
+    Info (169086): Pin g_out[1] not assigned to an exact location on the device
+    Info (169086): Pin g_out[2] not assigned to an exact location on the device
+    Info (169086): Pin g_out[3] not assigned to an exact location on the device
+    Info (169086): Pin g_out[4] not assigned to an exact location on the device
+    Info (169086): Pin g_out[5] not assigned to an exact location on the device
+    Info (169086): Pin g_out[6] not assigned to an exact location on the device
+    Info (169086): Pin g_out[7] not assigned to an exact location on the device
+    Info (169086): Pin g_out[8] not assigned to an exact location on the device
+    Info (169086): Pin g_out[9] not assigned to an exact location on the device
+    Info (169086): Pin b_out[0] not assigned to an exact location on the device
+    Info (169086): Pin b_out[1] not assigned to an exact location on the device
+    Info (169086): Pin b_out[2] not assigned to an exact location on the device
+    Info (169086): Pin b_out[3] not assigned to an exact location on the device
+    Info (169086): Pin b_out[4] not assigned to an exact location on the device
+    Info (169086): Pin b_out[5] not assigned to an exact location on the device
+    Info (169086): Pin b_out[6] not assigned to an exact location on the device
+    Info (169086): Pin b_out[7] not assigned to an exact location on the device
+    Info (169086): Pin b_out[8] not assigned to an exact location on the device
+    Info (169086): Pin b_out[9] not assigned to an exact location on the device
+    Info (169086): Pin vga_hs not assigned to an exact location on the device
+    Info (169086): Pin vga_vs not assigned to an exact location on the device
+    Info (169086): Pin vga_blank not assigned to an exact location on the device
     Info (169086): Pin vga_clk not assigned to an exact location on the device
-    Info (169086): Pin Xpos[0] not assigned to an exact location on the device
-    Info (169086): Pin Xpos[1] not assigned to an exact location on the device
-    Info (169086): Pin Xpos[2] not assigned to an exact location on the device
-    Info (169086): Pin Xpos[3] not assigned to an exact location on the device
-    Info (169086): Pin Xpos[4] not assigned to an exact location on the device
-    Info (169086): Pin Xpos[5] not assigned to an exact location on the device
-    Info (169086): Pin Xpos[6] not assigned to an exact location on the device
-    Info (169086): Pin Xpos[7] not assigned to an exact location on the device
-    Info (169086): Pin Xpos[8] not assigned to an exact location on the device
-    Info (169086): Pin Xpos[9] not assigned to an exact location on the device
-    Info (169086): Pin Ypos[0] not assigned to an exact location on the device
-    Info (169086): Pin Ypos[1] not assigned to an exact location on the device
-    Info (169086): Pin Ypos[2] not assigned to an exact location on the device
-    Info (169086): Pin Ypos[3] not assigned to an exact location on the device
-    Info (169086): Pin Ypos[4] not assigned to an exact location on the device
-    Info (169086): Pin Ypos[5] not assigned to an exact location on the device
-    Info (169086): Pin Ypos[6] not assigned to an exact location on the device
-    Info (169086): Pin Ypos[7] not assigned to an exact location on the device
-    Info (169086): Pin Ypos[8] not assigned to an exact location on the device
-    Info (169086): Pin Ypos[9] not assigned to an exact location on the device
-    Info (169086): Pin R not assigned to an exact location on the device
-    Info (169086): Pin G not assigned to an exact location on the device
-    Info (169086): Pin B not assigned to an exact location on the device
-    Info (169086): Pin left_in not assigned to an exact location on the device
-    Info (169086): Pin reset not assigned to an exact location on the device
-    Info (169086): Pin up_in not assigned to an exact location on the device
-    Info (169086): Pin down_in not assigned to an exact location on the device
-    Info (169086): Pin right_in not assigned to an exact location on the device
-    Info (169086): Pin refresh not assigned to an exact location on the device
+    Info (169086): Pin sw_left not assigned to an exact location on the device
+    Info (169086): Pin rst_n not assigned to an exact location on the device
+    Info (169086): Pin sw_down not assigned to an exact location on the device
+    Info (169086): Pin sw_right not assigned to an exact location on the device
+    Info (169086): Pin CLOCK_50 not assigned to an exact location on the device
+Info (176353): Automatically promoted node generate_clk:gen|my_pll:pll|altpll:altpll_component|_clk0 (placed in counter C2 of PLL_1)
+    Info (176355): Automatically promoted destinations to use location or clock signal External Clock Output CLKCTRL_X0_Y1_N1
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'Snake_Game.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332144): No user constrained generated clocks found in the design
 Info (332144): No user constrained base clocks found in the design
 Info (332096): The command derive_clocks did not find any clocks to derive.  No clocks were created or changed.
-Warning (332068): No clocks defined in design.
 Info (332130): Timing requirements not specified -- quality metrics such as performance may be sacrificed to reduce compilation time.
 Info (176233): Starting register packing
 Info (176235): Finished register packing
     Extra Info (176219): No registers were packed into other blocks
 Info (176214): Statistics of I/O pins that need to be placed that use the same VCCIO and VREF, before I/O pin placement
-    Info (176211): Number of I/O pins in group: 30 (unused VREF, 3.3V VCCIO, 27 input, 3 output, 0 bidirectional)
+    Info (176211): Number of I/O pins in group: 38 (unused VREF, 3.3V VCCIO, 5 input, 33 output, 0 bidirectional)
         Info (176212): I/O standards used: 3.3-V LVTTL.
 Info (176215): I/O bank details before I/O pin placement
     Info (176214): Statistics of I/O banks
-        Info (176213): I/O bank number 1 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  64 pins available
-        Info (176213): I/O bank number 2 does not use VREF pins and has undetermined VCCIO pins. 2 total pin(s) used --  57 pins available
+        Info (176213): I/O bank number 1 does not use VREF pins and has 3.3V VCCIO pins. 1 total pin(s) used --  63 pins available
+        Info (176213): I/O bank number 2 does not use VREF pins and has undetermined VCCIO pins. 3 total pin(s) used --  56 pins available
         Info (176213): I/O bank number 3 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  56 pins available
         Info (176213): I/O bank number 4 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  58 pins available
         Info (176213): I/O bank number 5 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  65 pins available
         Info (176213): I/O bank number 6 does not use VREF pins and has undetermined VCCIO pins. 1 total pin(s) used --  58 pins available
         Info (176213): I/O bank number 7 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  58 pins available
         Info (176213): I/O bank number 8 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  56 pins available
+Warning (15058): PLL "generate_clk:gen|my_pll:pll|altpll:altpll_component|pll" is in normal or source synchronous mode with output clock "compensate_clock" set to clk[0] that is not fully compensated because it feeds an output pin -- only PLLs in zero delay buffer mode can fully compensate output pins
 Info (171121): Fitter preparation operations ending: elapsed time is 00:00:00
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
@@ -1286,19 +1374,50 @@ Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were
     Info (170200): Optimizations that may affect the design's timing were skipped
 Info (11888): Total time spent on timing analysis during the Fitter is 0.02 seconds.
 Info (306004): Started post-fitting delay annotation
-Warning (306006): Found 3 output pins without output pin load capacitance assignment
-    Info (306007): Pin "R" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "G" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "B" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+Warning (306006): Found 34 output pins without output pin load capacitance assignment
+    Info (306007): Pin "r_out[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "r_out[1]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "r_out[2]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "r_out[3]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "r_out[4]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "r_out[5]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "r_out[6]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "r_out[7]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "r_out[8]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "r_out[9]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "g_out[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "g_out[1]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "g_out[2]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "g_out[3]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "g_out[4]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "g_out[5]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "g_out[6]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "g_out[7]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "g_out[8]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "g_out[9]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "b_out[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "b_out[1]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "b_out[2]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "b_out[3]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "b_out[4]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "b_out[5]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "b_out[6]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "b_out[7]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "b_out[8]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "b_out[9]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "vga_hs" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "vga_vs" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "vga_blank" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "vga_clk" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
 Info (306005): Delay annotation completed successfully
 Info (306004): Started post-fitting delay annotation
 Info (306005): Delay annotation completed successfully
-Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
+Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:00
 Warning (169174): The Reserve All Unused Pins setting has not been specified, and will default to 'As output driving ground'.
 Info (144001): Generated suppressed messages file D:/Snake/Quartus/output_files/Snake_Game.fit.smsg
 Info: Quartus II 64-Bit Fitter was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 5282 megabytes
-    Info: Processing ended: Sun May 12 11:53:57 2024
+    Info: Peak virtual memory: 5284 megabytes
+    Info: Processing ended: Sun May 12 14:58:42 2024
     Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:03
 

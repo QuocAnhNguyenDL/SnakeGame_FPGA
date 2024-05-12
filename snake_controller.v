@@ -3,7 +3,7 @@ module snake_controller
 	//-------------CLOCK----------------
 	input	 				refresh,
 	input 				vga_clk,
-	input 				reset,
+	input 				rst_n,
 	
 	//-------------VGA signals----------
 	input 	[9:0] 	Xpos,
@@ -12,12 +12,32 @@ module snake_controller
 	output 			 	G,
 	output 				B,
 	
-	//------------SNES signals----------
+	//------------Player signals----------
 	input 				up_in,
 	input 				down_in,
 	input 				left_in,
 	input 				right_in
 );
+
+/*
+snake_controller snake
+(
+	.refresh				(),
+	.vga_clk				(),
+	.rst_n				(),
+	
+	.Xpos					(),
+	.Ypos					(),
+	.R						(),
+	.G						(),
+	.B						(),
+	
+	.up_in				(),
+	.down_in				(),
+	.eft_in				(),
+	.right_in			()
+);
+*/
 
 `include "game_para.txt"
 
@@ -30,6 +50,9 @@ reg [9:0] length = 10'b1;
 reg[4:0] headX = 10'b10;
 reg[4:0] headY = 10'b10; 
 
+reg[9:0] food_coordinates = 0;
+reg[4:0] foodX = 10, foodY = 10;
+
 reg [4:0] i,j;
 
 
@@ -40,7 +63,7 @@ assign B = pixel[0];
 //------Update direction-------//
 always @(posedge refresh)
 begin
-	if(reset == 1'b1)	direction <= RIGHT; 
+	if(rst_n == 1'b0)	direction <= RIGHT; 
 	else
 	begin
 		if(up_in == 1'b1) direction <= UP;
@@ -70,7 +93,17 @@ begin
 			if(snake[i][j] > 0) snake[i][j] <= snake[i][j] - 1;
 		end
 	end
-	
+end
+
+//----------Eat food-----------//
+always @(posedge refresh)
+begin
+	if(headX == foodX & headY == foodY)
+	begin
+		length <= length + 1;
+		foodX <= food_coordinates / 30;
+		foodY <= food_coordinates % 20;
+	end
 end
 
 //----------Draw Snake-----------//
@@ -78,10 +111,18 @@ end
 begin
 	if(Xpos > 20 && Xpos < 619 && Ypos > 20 && Ypos < 459)
 	begin
-		if(snake[(Xpos - 20)/20][(Ypos-20)/20] > 0) pixel =  snake_color;
-		else pixel = blank_color;
+		if(snake[(Xpos - 20)/20][(Ypos-20)/20] > 0) pixel <=  snake_color;
+		else if(Xpos == foodX  &  Ypos == foodY) pixel <= food_color;
+		else pixel <= blank_color;
 	end
 end*/
+
+//--------Generate food-------//
+always @(posedge vga_clk)
+begin
+	food_coordinates <= food_coordinates + 1;
+	if(food_coordinates == 30*22 - 1) food_coordinates <= 0;
+end
 
 endmodule
 

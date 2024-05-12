@@ -1,5 +1,5 @@
 
-State Machine - |snake_controller|direction
+State Machine - |game|snake_controller:snake|direction
 Name direction.UP direction.LEFT direction.DOWN direction.RIGHT 
 direction.RIGHT 0 0 0 0 
 direction.DOWN 0 0 1 1 

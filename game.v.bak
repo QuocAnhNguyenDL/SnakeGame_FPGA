@@ -1,0 +1,36 @@
+module game
+(
+	//---------CLOCK----------//
+	input CLOCK_50,
+	input reset,
+	
+	//---------VGA signals-----//
+	output [9:0] r,
+	output [9:0] g,
+	output [9:0] b,
+	output vga_hs,
+	output vga_vs,
+	output vga_blank,
+	output vga_clk;	
+)
+
+snake_controller snake
+(
+	//-------------CLOCK----------------
+	.refresh				(),
+	.vga_clk				(),
+	.reset				(),
+	
+	//-------------VGA signals----------
+	.Xpos					(),
+	.Ypos					(),
+	.R						(),
+	.G						(),
+	.B						(),
+	
+	//------------SNES signals----------
+	.up_in				(),
+	.down_in				(),
+	.eft_in				(),
+	.right_in			()
+);
