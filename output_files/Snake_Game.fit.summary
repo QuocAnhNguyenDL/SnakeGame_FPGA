@@ -1,15 +1,15 @@
-Fitter Status : Successful - Sun May 12 14:58:42 2024
+Fitter Status : Successful - Tue May 14 12:53:56 2024
 Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
 Revision Name : Snake_Game
-Top-level Entity Name : game
+Top-level Entity Name : top_level
 Family : Cyclone II
 Device : EP2C35F672C6
 Timing Models : Final
-Total logic elements : 0 / 33,216 ( 0 % )
-    Total combinational functions : 0 / 33,216 ( 0 % )
-    Dedicated logic registers : 0 / 33,216 ( 0 % )
-Total registers : 0
-Total pins : 40 / 475 ( 8 % )
+Total logic elements : 14,681 / 33,216 ( 44 % )
+    Total combinational functions : 14,680 / 33,216 ( 44 % )
+    Dedicated logic registers : 4,045 / 33,216 ( 12 % )
+Total registers : 4045
+Total pins : 75 / 475 ( 16 % )
 Total virtual pins : 0
 Total memory bits : 0 / 483,840 ( 0 % )
 Embedded Multiplier 9-bit elements : 0 / 70 ( 0 % )

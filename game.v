@@ -17,16 +17,21 @@ module game
 	output vga_hs,
 	output vga_vs,
 	output vga_blank,
-	output vga_clk	
+	output vga_clk,
+	output [9:0] Xpos,
+	output [9:0] Ypos,
+	output clk_refresh
 );
 
 wire refresh;
-wire [9:0] Xpos;
-wire [9:0] Ypos;
+//wire [9:0] Xpos;
+//wire [9:0] Ypos;
 
-wire [9:0] R;
-wire [9:0] G;
-wire [9:0] B;
+wire R;
+wire G;
+wire B;
+
+assign clk_refresh = refresh;
  
 generate_clk gen
 (
@@ -47,7 +52,7 @@ snake_controller snake
 	.G						(G),
 	.B						(B),
 	
-	.up_in				(sw_in),
+	.up_in				(sw_up),
 	.down_in				(sw_down),
 	.left_in				(sw_left),
 	.right_in			(sw_right)
@@ -55,11 +60,11 @@ snake_controller snake
 
 vga_controller vga
 (
-	.clk					(clk_vga), 
+	.clk					(vga_clk), 
 	.rst_n				(rst_n),
-	.r_in					(R),
-	.g_in					(G),
-	.b_in					(B),
+	.r_in					({10{R}}),
+	.g_in					({10{G}}),
+	.b_in					({10{B}}),
 	.vga_hs				(vga_hs), 
 	.vga_vs				(vga_vs), 
 	.video_on			(vga_blank),

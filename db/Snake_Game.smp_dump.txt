@@ -1,7 +1,7 @@
 
-State Machine - |game|snake_controller:snake|direction
-Name direction.UP direction.LEFT direction.DOWN direction.RIGHT 
-direction.RIGHT 0 0 0 0 
+State Machine - |top_level|game:g|snake_controller:snake|direction
+Name direction.RIGHT direction.LEFT direction.DOWN direction.UP 
+direction.UP 0 0 0 0 
 direction.DOWN 0 0 1 1 
 direction.LEFT 0 1 0 1 
-direction.UP 1 0 0 1 
+direction.RIGHT 1 0 0 1 

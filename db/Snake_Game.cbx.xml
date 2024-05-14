@@ -1,5 +1,9 @@
 <?xml version="1.0" ?>
 <LOG_ROOT>
 	<PROJECT NAME="Snake_Game">
+		<CBX_INST_ENTRY INSTANCE_NAME="|top_level|game:g|snake_controller:snake|lpm_divide:Div0" CBX_FILE_NAME="lpm_divide_bem.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|top_level|game:g|snake_controller:snake|lpm_divide:Div22" CBX_FILE_NAME="lpm_divide_fem.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|top_level|game:g|snake_controller:snake|lpm_divide:Div23" CBX_FILE_NAME="lpm_divide_fem.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|top_level|game:g|snake_controller:snake|lpm_divide:Mod0" CBX_FILE_NAME="lpm_divide_e6m.tdf"/>
 	</PROJECT>
 </LOG_ROOT>

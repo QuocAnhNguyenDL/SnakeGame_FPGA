@@ -14,7 +14,7 @@ generate_clk gen
 );
 */
 
-reg[9:0] counter = 0;
+reg[23:0] counter = 0;
 
 my_pll pll
 (
@@ -25,7 +25,7 @@ my_pll pll
 always @(posedge CLOCK_50)
 begin
 	counter <= counter + 1;
-	if(counter == 1000000)
+	if(counter == 15000000)
 	begin
 		refresh <= ~refresh;
 		counter <= 0;

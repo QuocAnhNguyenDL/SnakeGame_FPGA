@@ -1,0 +1,36 @@
+module top_level
+(
+	input CLOCK_50,
+	input rst_n,
+	
+	input [17:0] SW,
+	output VGA_CLK,
+	output VGA_HS,
+	output VGA_VS,
+	output VGA_BLANK,
+	output [9:0] VGA_R,
+	output [9:0] VGA_G,
+	output [9:0] VGA_B
+)
+
+module game
+(
+	.CLOCK_50(CLOCK_50),
+	.rst_n(SW[0]),
+	
+	.sw_up(SW[1]),
+	.sw_down(SW[2]),
+	.sw_left(SW[3]),
+	.sw_right(SW[4]),
+	
+	.r_out(VGA_R),
+	.g_out(VGA_G),
+	.b_out(VGA_B),
+	.vga_hs(VGA_HS),
+	.vga_vs(VGA_VS),
+	.vga_blank(VGA_BLANK),
+	.vga_clk(VGA_CLK)	
+);
+
+endmodule
+

@@ -8,4 +8,5 @@ parameter height = 22;
 
 parameter snake_color = 3'b100;
 parameter food_color  = 3'b010;
-parameter blank_color = 3'b000;
+parameter blank_color = 3'b111;
+parameter border_color = 3'b001;

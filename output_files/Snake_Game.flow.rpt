@@ -1,5 +1,5 @@
 Flow report for Snake_Game
-Sun May 12 14:58:46 2024
+Tue May 14 12:54:12 2024
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -40,18 +40,18 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Successful - Sun May 12 14:58:46 2024           ;
+; Flow Status                        ; Successful - Tue May 14 12:54:12 2024           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; Snake_Game                                      ;
-; Top-level Entity Name              ; game                                            ;
+; Top-level Entity Name              ; top_level                                       ;
 ; Family                             ; Cyclone II                                      ;
 ; Device                             ; EP2C35F672C6                                    ;
 ; Timing Models                      ; Final                                           ;
-; Total logic elements               ; 0 / 33,216 ( 0 % )                              ;
-;     Total combinational functions  ; 0 / 33,216 ( 0 % )                              ;
-;     Dedicated logic registers      ; 0 / 33,216 ( 0 % )                              ;
-; Total registers                    ; 0                                               ;
-; Total pins                         ; 40 / 475 ( 8 % )                                ;
+; Total logic elements               ; 14,681 / 33,216 ( 44 % )                        ;
+;     Total combinational functions  ; 14,680 / 33,216 ( 44 % )                        ;
+;     Dedicated logic registers      ; 4,045 / 33,216 ( 12 % )                         ;
+; Total registers                    ; 4045                                            ;
+; Total pins                         ; 75 / 475 ( 16 % )                               ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0 / 483,840 ( 0 % )                             ;
 ; Embedded Multiplier 9-bit elements ; 0 / 70 ( 0 % )                                  ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/12/2024 14:58:38 ;
+; Start date & time ; 05/14/2024 12:52:08 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Snake_Game          ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                 ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+---------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 136411544994074.171550071721344       ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 136411544994074.171566592820896       ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                           ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)             ; <None>        ; --          ; --             ;
 ; IP_TOOL_NAME                        ; ALTPLL                                ; --            ; --          ; --             ;
@@ -83,13 +83,13 @@ applicable agreement for further details.
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                    ; --            ; --          ; --             ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                     ; --            ; --          ; --             ;
 ; MISC_FILE                           ; my_pll.ppf                            ; --            ; --          ; --             ;
-; PARTITION_COLOR                     ; 16764057                              ; --            ; game        ; Top            ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                 ; --            ; game        ; Top            ;
-; PARTITION_NETLIST_TYPE              ; SOURCE                                ; --            ; game        ; Top            ;
+; PARTITION_COLOR                     ; 16764057                              ; --            ; top_level   ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                 ; --            ; top_level   ; Top            ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                                ; --            ; top_level   ; Top            ;
 ; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                   ; --            ; --          ; --             ;
 ; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW ; --            ; --          ; --             ;
 ; PROJECT_OUTPUT_DIRECTORY            ; output_files                          ; --            ; --          ; --             ;
-; TOP_LEVEL_ENTITY                    ; game                                  ; Snake_Game    ; --          ; --             ;
+; TOP_LEVEL_ENTITY                    ; top_level                             ; Snake_Game    ; --          ; --             ;
 +-------------------------------------+---------------------------------------+---------------+-------------+----------------+
 
 
@@ -98,12 +98,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:01     ; 1.0                     ; 4614 MB             ; 00:00:01                           ;
-; Fitter                    ; 00:00:03     ; 2.0                     ; 5284 MB             ; 00:00:03                           ;
-; Assembler                 ; 00:00:02     ; 1.0                     ; 4579 MB             ; 00:00:01                           ;
-; TimeQuest Timing Analyzer ; 00:00:00     ; 1.0                     ; 4586 MB             ; 00:00:00                           ;
-; EDA Netlist Writer        ; 00:00:00     ; 1.0                     ; 4527 MB             ; 00:00:00                           ;
-; Total                     ; 00:00:06     ; --                      ; --                  ; 00:00:05                           ;
+; Analysis & Synthesis      ; 00:00:39     ; 1.0                     ; 4668 MB             ; 00:00:34                           ;
+; Fitter                    ; 00:01:07     ; 1.7                     ; 5337 MB             ; 00:00:54                           ;
+; Assembler                 ; 00:00:02     ; 1.0                     ; 4621 MB             ; 00:00:02                           ;
+; TimeQuest Timing Analyzer ; 00:00:04     ; 1.0                     ; 4773 MB             ; 00:00:02                           ;
+; EDA Netlist Writer        ; 00:00:05     ; 1.0                     ; 4671 MB             ; 00:00:04                           ;
+; Total                     ; 00:01:57     ; --                      ; --                  ; 00:01:36                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
