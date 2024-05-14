@@ -3,12 +3,12 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow Model Setup 'g|gen|pll|altpll_component|pll|clk[0]'
-Slack : -11.305
-TNS   : -33.673
+Slack : -12.335
+TNS   : -36.602
 
 Type  : Slow Model Setup 'game:g|generate_clk:gen|refresh'
-Slack : -10.135
-TNS   : -21166.382
+Slack : -12.033
+TNS   : -34008.918
 
 Type  : Slow Model Setup 'CLOCK_50'
 Slack : 2.819
@@ -19,8 +19,8 @@ Slack : -2.549
 TNS   : -2.549
 
 Type  : Slow Model Hold 'game:g|generate_clk:gen|refresh'
-Slack : -0.487
-TNS   : -0.499
+Slack : -0.472
+TNS   : -0.502
 
 Type  : Slow Model Hold 'g|gen|pll|altpll_component|pll|clk[0]'
 Slack : 0.798
@@ -39,12 +39,12 @@ Slack : 19.000
 TNS   : 0.000
 
 Type  : Fast Model Setup 'g|gen|pll|altpll_component|pll|clk[0]'
-Slack : -4.865
-TNS   : -14.490
+Slack : -5.343
+TNS   : -15.860
 
 Type  : Fast Model Setup 'game:g|generate_clk:gen|refresh'
-Slack : -3.291
-TNS   : -7487.497
+Slack : -4.861
+TNS   : -13821.434
 
 Type  : Fast Model Setup 'CLOCK_50'
 Slack : 1.972
@@ -55,8 +55,8 @@ Slack : -1.592
 TNS   : -1.592
 
 Type  : Fast Model Hold 'game:g|generate_clk:gen|refresh'
-Slack : -0.674
-TNS   : -1.646
+Slack : -0.673
+TNS   : -1.425
 
 Type  : Fast Model Hold 'g|gen|pll|altpll_component|pll|clk[0]'
 Slack : 0.358

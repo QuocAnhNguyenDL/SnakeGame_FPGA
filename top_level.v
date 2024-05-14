@@ -20,6 +20,7 @@ game g
 (
 	.CLOCK_50(CLOCK_50),
 	.rst_n(SW[0]),
+	.restart(SW[1]),
 	
 	.sw_up(~KEY[3]),
 	.sw_down(~KEY[2]),
@@ -33,8 +34,6 @@ game g
 	.vga_vs(VGA_VS),
 	.vga_blank(VGA_BLANK),
 	.vga_clk(VGA_CLK),
-	
-	.clk_refresh(test)
 );
 
 endmodule

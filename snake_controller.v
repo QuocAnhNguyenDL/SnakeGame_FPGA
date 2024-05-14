@@ -1,18 +1,19 @@
 module snake_controller
 (
-	//-------------CLOCK----------------
+	//-------------CLOCK----------------//
 	input	 				refresh,
 	input 				vga_clk,
 	input 				rst_n,
+	input 				restart,
 	
-	//-------------VGA signals----------
+	//-------------VGA signals----------//
 	input 	[9:0] 	Xpos,
 	input 	[9:0] 	Ypos,
 	output 			 	R,
 	output 			 	G,
 	output 				B,
 	
-	//------------Player signals----------
+	//------------Player signals----------//
 	input 				up_in,
 	input 				down_in,
 	input 				left_in,
@@ -39,12 +40,25 @@ snake_controller snake
 );
 */
 
-`include "game_para.txt"
+parameter UP = 2'b00;
+parameter DOWN = 2'b01;
+parameter LEFT = 2'b10;
+parameter RIGHT = 2'b11;
+
+parameter width = 30;
+parameter height = 22;
+
+parameter snake_color = 3'b100;
+parameter food_color  = 3'b010;
+parameter blank_color = 3'b111;
+parameter border_color = 3'b001;
+
+//`include "game_para.txt"
 
 reg[5:0] snake[0 : height - 1][0 : width - 1];
 reg[3:0] pixel;
 
-reg [1:0] direction = RIGHT;
+reg [1:0] direction;
 reg [9:0] length = 10'b1;
 
 reg[4:0] headX = 5'b10;
@@ -61,19 +75,15 @@ assign R = pixel[2];
 assign G = pixel[1];
 assign B = pixel[0];
 
-
+//------reset game-------------//
 
 //------Update direction-------//
 always @(*)
 begin
-	if(rst_n == 1'b0)	direction <= RIGHT; 
-	else
-	begin
-		if(up_in == 1'b1 & direction != DOWN) direction <= UP;
-		else if(down_in == 1'b1 & direction != UP) direction <= DOWN;
-		else if(right_in == 1'b1 & direction != LEFT) direction <= RIGHT;
-		else if(left_in == 1'b1 & direction != RIGHT) direction <= LEFT;
-	end
+	if(up_in == 1'b1 && direction != DOWN) direction <= UP;
+	else if(down_in == 1'b1 && direction != UP) direction <= DOWN;
+	else if(right_in == 1'b1 && direction != LEFT) direction <= RIGHT;
+	else if(left_in == 1'b1 && direction != RIGHT) direction <= LEFT;
 end
 
 
@@ -81,17 +91,18 @@ end
 always @(posedge refresh)
 begin
 	if( headX > 29 || headX < 0 || headY > 21 || headY < 0) lose <= 1;
-	//if(direction == UP && snake[headY - 1][headX] > 0) lose <= 1;
-	//if(direction == DOWN && snake[headY + 1][headX] > 0) lose <= 1;
-	//if(direction == LEFT && snake[headY][headX-1] > 0) lose <= 1;
-	//if(direction == UP && snake[headY][headX+1] > 0) lose <= 1;
+	
+	if(direction == UP && snake[headY - 1][headX] > 0) lose <= 1;
+	if(direction == DOWN && snake[headY + 1][headX] > 0) lose <= 1;
+	if(direction == LEFT && snake[headY][headX-1] > 0) lose <= 1;
+	if(direction == UP && snake[headY][headX+1] > 0) lose <= 1;
 end
 
 
 //---------Move snake--------//
-
 always @(posedge refresh)
 begin
+	//direction <= temp_direction;
 	case(direction)
 		UP 	: begin snake[headY - 1][headX] <= length; headY = headY - 1; end
 		DOWN 	: begin snake[headY + 1][headX] <= length; headY = headY + 1; end

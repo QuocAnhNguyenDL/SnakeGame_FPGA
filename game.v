@@ -3,6 +3,7 @@ module game
 	//---------CLOCK----------//
 	input CLOCK_50,
 	input rst_n,
+	input restart,
 	
 	//---------Player input----//
 	input sw_up,
@@ -20,7 +21,9 @@ module game
 	output vga_clk,
 	output [9:0] Xpos,
 	output [9:0] Ypos,
-	output clk_refresh
+	output clk_refresh,
+	
+	output [1:0] d
 );
 
 wire refresh;
@@ -45,6 +48,7 @@ snake_controller snake
 	.refresh				(refresh),
 	.vga_clk				(vga_clk),
 	.rst_n				(rst_n),
+	.restart				(restart),
 	
 	.Xpos					(Xpos),
 	.Ypos					(Ypos),
@@ -55,7 +59,7 @@ snake_controller snake
 	.up_in				(sw_up),
 	.down_in				(sw_down),
 	.left_in				(sw_left),
-	.right_in			(sw_right)
+	.right_in			(sw_right),
 );
 
 vga_controller vga
